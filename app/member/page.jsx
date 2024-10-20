@@ -1,6 +1,6 @@
 import Link from "next/link";
 async function getAllMembers() {
-    const allMembers = await fetch('http://novo-fit-club-workouts.local/wp-json/wp/v2/member');
+    const allMembers = await fetch('https://novofitclub.com/wp-json/wp/v2/member');
     const members = await allMembers.json();
     return members;
 };

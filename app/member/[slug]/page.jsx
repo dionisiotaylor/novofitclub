@@ -3,7 +3,7 @@ import IconProgram from "../../../assets/icons/icon-program.svg";
 import ChevronMini from "../../../assets/icons/chevron-mini.svg";
 
 async function fetchMember(params) {
-    const memberPromise = await fetch(`http://novo-fit-club-workouts.local/wp-json/wp/v2/member?slug=${params.slug}`);
+    const memberPromise = await fetch(`https://novofitclub.com/wp-json/wp/v2/member?slug=${params.slug}`);
     const member = await memberPromise.json();
     
     return member;

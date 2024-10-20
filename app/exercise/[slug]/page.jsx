@@ -2,7 +2,7 @@ import YouTubeVideo from "../../../components/YouTubeVideo";
 import BackButton from '@components/BackButton';
 
 async function fetchExercise(params) {
-    const exercisePromise = await fetch(`http://novo-fit-club-workouts.local/wp-json/wp/v2/exercise?slug=${params.slug}`);
+    const exercisePromise = await fetch(`https://novofitclub.com/wp-json/wp/v2/exercise?slug=${params.slug}`);
     const exercise = exercisePromise.json()
 
     return exercise;

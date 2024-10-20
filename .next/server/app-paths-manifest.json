@@ -1,6 +1,10 @@
 {
-  "/program/[slug]/workout/[ID]/page": "app/program/[slug]/workout/[ID]/page.js",
-  "/program/[slug]/page": "app/program/[slug]/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/exercise/[slug]/page": "app/exercise/[slug]/page.js",
   "/member/[slug]/page": "app/member/[slug]/page.js",
-  "/exercise/[slug]/page": "app/exercise/[slug]/page.js"
+  "/about-us/page": "app/about-us/page.js",
+  "/member/page": "app/member/page.js",
+  "/page": "app/page.js",
+  "/program/[slug]/workout/[ID]/page": "app/program/[slug]/workout/[ID]/page.js",
+  "/program/[slug]/page": "app/program/[slug]/page.js"
 }

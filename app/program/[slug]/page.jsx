@@ -6,7 +6,7 @@ import { slugify } from "../../../utils/slugify";
 import BackButton from '@components/BackButton'; 
 
 async function fetchProgram(params) {
-    const programPromise = await fetch(`http://novo-fit-club-workouts.local/wp-json/wp/v2/program?slug=${params.slug}`);
+    const programPromise = await fetch(`https://novofitclub.com/wp-json/wp/v2/program?slug=${params.slug}`);
     const program = await programPromise.json();
     
     return program;
