@@ -1,0 +1,45 @@
+@use "sass:color";
+
+/* Main */
+	// Primary
+	$primary: #212121;
+	$primary-light: color.adjust($primary, $lightness: 5%);
+	$primary-dark: color.adjust($primary, $lightness: -5%);
+
+	// Secondary
+	$secondary: #1E1E1E;
+	$secondary-light: color.adjust($secondary, $lightness: 5%);
+	$secondary-dark: color.adjust($secondary, $lightness: -5%);
+
+	// Tertiary
+	$tertiary: #101010;
+	$tertiary-light: color.adjust($tertiary, $lightness: 5%);
+	$tertiary-dark: color.adjust($tertiary, $lightness: -5%);
+
+
+
+/* Accent */
+	// Accent
+	$accent: #E01C48;
+	$accent-light: color.adjust($accent, $lightness: 5%);
+	$accent-dark: color.adjust($accent, $lightness: -5%);
+
+
+/* Other */
+	$dark: #000;
+	$light: #fff;
+	$grey: #393e46;
+	$grey-9: #414244;
+	$grey-8: #616161;
+	$grey-1: #9A9A9A;
+
+
+/* Text */
+	$text: $grey;
+	$text-dark: $primary;
+	$text-highlight: $accent;
+
+/* Status */
+	$success: #00a651;
+	$warning: #ffaf1b;
+	$error: #a51c1c;

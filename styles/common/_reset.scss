@@ -1,0 +1,46 @@
+* {
+	box-sizing: border-box;
+
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+a,
+button,
+select,
+input,
+textarea {
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+	margin: 0;
+}
+
+ol,ul {
+    list-style: none;
+	padding-left: 0;
+}
+
+select,
+input {
+	padding: 0;
+}
+
+svg {
+	display: block;
+}

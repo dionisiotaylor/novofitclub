@@ -1,0 +1,245 @@
+.header {
+    background-color: $accent;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $light;
+
+    height: 56px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+
+    .wrapper{
+        padding: 0;
+        position: relative;
+    }
+}
+
+.back-button {
+    background-color: $accent;
+    padding-left: 20px;
+    height: 56px;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    span {
+        background-color: transparent;
+        border: none;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    svg {
+        width: 8px;
+    }
+}
+.container-app {
+    background-color: $primary;
+    min-height: 100vh;
+}
+
+.wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.sub-header {
+    margin-bottom: 20px;
+
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+
+}
+
+.single-item {
+    background-color: $primary-light;
+    border-radius: 12px;
+    border: 3px solid $grey-8;
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+
+    .arrow {
+        display: block;
+        width: 20px;
+        height: 15px;
+        position: absolute;
+        right: 20px;
+        top: 45%;
+        transform: rotate(90deg) translateY(-50%);
+        color: $accent;
+    }
+
+    &__icon {
+        color: $light;
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.2;
+    }
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: 35px 1fr;
+        align-items: center;
+        gap: 15px;
+    }
+
+    &__meta {
+        border-left: 3px solid $accent;
+        padding-left: 10px;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+}
+
+.group-exercises {
+    position: relative;
+    margin-bottom: 0.875rem;
+    padding-top: 0.5rem;
+    border-bottom: 1px solid $grey-8;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 2px;
+        height: calc(100% - 60px);
+        background-color: $accent;
+        position: absolute;
+        top: 14px;
+        left: 32px;;
+        z-index: 1;
+    }
+
+    .exercise {
+        border: 0;
+
+        &:last-of-type {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.group__header {
+    display: flex;
+    padding: 0 0 10px 44px;
+    gap: 6px;
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 8px;
+        height: 8px;
+        background-color: $accent;
+        border-radius: 50%;
+        position: absolute;
+        top: 6px;
+        left: 29px;
+    }
+
+    &-title {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+.exercise {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    align-items: center;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid $grey-8;
+    gap: 15px;
+    position: relative;
+    z-index: 2;
+    
+    &__thumbnail {
+        width: 70px;
+        height: 70px;
+        overflow: hidden;
+        border-radius: 14px;
+        position: relative;
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(2.2);
+            display: block;
+        }
+    }
+
+    &__title {
+        font-size: 16px;
+        font-weight: 500;
+        padding-bottom: 4px;
+    }
+
+    &__meta {
+        display: flex;
+        gap: 10px;
+
+        span {
+            display: grid;
+            grid-template-columns: 15px 1fr;
+            gap: 4px;
+            align-items: center;
+        }
+
+        svg {
+            color: $light;
+            width: 15px;
+        }
+    }
+
+    &__play {
+        width: 25px;
+        height: 25px;
+        background-color: rgba($accent, 0.6);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $light;
+        z-index: 3;
+
+        svg {
+            width: 40%;
+        }
+    }
+}
+
+.video-panel {
+    position: relative;
+    z-index: 0;
+    height: calc(100vh - 56px);
+
+    iframe{
+        height: calc(100vh - 56px);
+        z-index: 1;
+        width: 100%;
+    }
+}

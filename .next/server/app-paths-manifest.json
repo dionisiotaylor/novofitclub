@@ -1,0 +1,6 @@
+{
+  "/program/[slug]/workout/[ID]/page": "app/program/[slug]/workout/[ID]/page.js",
+  "/program/[slug]/page": "app/program/[slug]/page.js",
+  "/member/[slug]/page": "app/member/[slug]/page.js",
+  "/exercise/[slug]/page": "app/exercise/[slug]/page.js"
+}
