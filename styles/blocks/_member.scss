@@ -3,7 +3,6 @@
     font-weight: bold;
     text-transform: uppercase;
     color: $light;
-
     height: 56px;
     text-align: center;
     position: relative;
@@ -12,6 +11,16 @@
     .wrapper{
         padding: 0;
         position: relative;
+    }
+
+    &__title {
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 1.1;
+        width: calc(100% - 160px);
+        margin: 0 auto;
     }
 }
 

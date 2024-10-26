@@ -2,21 +2,34 @@ import Link from "next/link";
 import IconProgram from "../../../assets/icons/icon-program.svg";
 import ChevronMini from "../../../assets/icons/chevron-mini.svg";
 
-async function fetchMember(params) {
-    const memberPromise = await fetch(`https://novofitclub.com/wp-json/wp/v2/member?slug=${params.slug}`);
-    const member = await memberPromise.json();
-    
-    return member;
+// Fetch member data
+async function fetchMember(slug) {
+    const res = await fetch(`https://novofitclub.com/wp-json/wp/v2/member?slug=${slug}`, { next: { revalidate: 10 } });
+    const memberData = await res.json();
+    return memberData[0]; // Return the first item if the array has data
 }
 
-export default async function Page({params}) {
-    const res = await fetchMember(params);
-    const member = res[0];
+// Generate metadata for SEO
+export async function generateMetadata({ params }) {
+    const member = await fetchMember(params.slug);
+    return {
+        title: member ? `${member.title.rendered} - Member Page` : "Member Page",
+    };
+}
+
+// Main component
+export default async function MemberPage({ params }) {
+    const member = await fetchMember(params.slug);
+
+    if (!member) {
+        return <div>Member not found.</div>; // Handle not-found case
+    }
+
     return (
         <>
             <header className="header">
                 <div className="wrapper">
-                    {member.title.rendered}
+                    <h2 className="header__title">{member.title.rendered}</h2>
                 </div>
             </header>
 
@@ -37,7 +50,7 @@ export default async function Page({params}) {
                                                 <span className="single-item__icon"><IconProgram/></span>
                                                 <span>
                                                     <h2 className="single-item__title">{ singleProgram.post_title }</h2>
-                                                    <div className="single-item__meta">{/*INIT DATE*/}</div>
+                                                    <div className="single-item__meta">{/* INIT DATE */}</div>
                                                 </span>
                                             </span>
                                             <span className="arrow"><ChevronMini/></span>

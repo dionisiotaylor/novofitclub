@@ -1,9 +1,26 @@
-import Link from 'next/link';
+'use client';
 
-export default function Page() {
+import MqttWebSocketComponent from '@components/MqttWebSocketComponent';
+
+const HomePage = () => {
     return (
-        <>
-            <div>Hello Content!!</div>
-        </>
+      <div>
+        <h1>Welcome to the MQTT</h1>
+        <MqttWebSocketComponent />
+      </div>
     );
-}
+  };
+  
+  export default HomePage;
+
+
+
+
+
+// export default function Page() {
+//     return (
+//         <>
+//             <div>Hello Content!!</div>
+//         </>
+//     );
+// }

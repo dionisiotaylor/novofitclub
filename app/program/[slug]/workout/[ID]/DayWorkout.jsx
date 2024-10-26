@@ -8,12 +8,12 @@ import IconRepeat from "@assets/icons/icon-repeat.svg";
 import IconClock from "@assets/icons/icon-clock.svg";
 import IconPlay from "@assets/icons/icon-play.svg";
 
+
 export default function DayWorkout(props) {
     const searchParams = useSearchParams();
     const workoutDay = searchParams.get('workout_name');
 
-    const workouts = props.program.acf.workout;
-    
+    const workouts = props.program;
     return (
         <>
             <div className="wrapper">

@@ -18,11 +18,18 @@ export default async function Page({ params }) {
     const videoId = videoIdMatch ? videoIdMatch[1] : null;
 
 
+    // Transform slug into text
+    const formattedTitle = params.slug
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+
     return (
         <>
             <header className="header">
                 <div className="wrapper">
                     <BackButton />
+                    <h2 className="header__title">{formattedTitle}</h2>
                 </div>
             </header>
 
