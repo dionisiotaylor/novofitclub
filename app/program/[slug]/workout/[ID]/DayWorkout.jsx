@@ -44,10 +44,8 @@ export default function DayWorkout(props) {
                                                     const hasExercises = Array.isArray(exerciseGroup.exercise) && exerciseGroup.exercise.length > 0;
                                                     return hasExercises ? (
                                                         <React.Fragment key={exerciseGroupIndex}>
-                                                            
                                                             {/* Exercise-level information */}
                                                             {exerciseGroup.exercise.map((exercise, exerciseIndex) => (
-                                                                
                                                                 <Link key={exerciseIndex} className="exercise" href={`/exercise/${exercise.post_name}`}>
                                                                     <div className="exercise__thumbnail">
                                                                         <span className="exercise__play"><IconPlay/></span>
@@ -61,8 +59,9 @@ export default function DayWorkout(props) {
                                                                     <div className='exercise__info'>
                                                                         <h2 className="exercise__title">{exercise.post_title }</h2>
                                                                         <div className="exercise__meta">
-                                                                            <span><IconRepeat />{ day.exercises[exerciseIndex].objective }</span>
-                                                                            <span><IconClock/>{ day.exercises[exerciseIndex].break }</span>
+                                                                            {/* Access objective and break from the parent exerciseGroup object */}
+                                                                            <span><IconRepeat />{ exerciseGroup.objective }</span>
+                                                                            <span><IconClock />{ exerciseGroup.break }</span>
                                                                         </div>
                                                                     </div>
                                                                 </Link>
@@ -70,6 +69,7 @@ export default function DayWorkout(props) {
                                                         </React.Fragment>
                                                     ) : null; // Don't render anything if there are no exercises
                                                 })}
+
                                             </div>
                                         ) : (
                                             <p>No exercises available</p>
