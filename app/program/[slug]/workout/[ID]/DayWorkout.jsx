@@ -76,34 +76,40 @@ export default function DayWorkout(props) {
                                         )
                                     ) : null}
 
-                                    {day.acf_fc_layout === "single_exercise" ? (
-                                        Array.isArray(day.exercise) && day.exercise.length > 0 ? (
-                                            <div className="single-exercise">
-                                                {day.exercise.map((exercise, exerciseIndex) => (
-                                                    <Link key={exerciseIndex} className="exercise" href={`/exercise/${exercise.post_name}`}>
-                                                        <div className="exercise__thumbnail">
-                                                            <span className="exercise__play"><IconPlay/></span>
-                                                            <Image
-                                                                src={`https://img.youtube.com/vi/${exercise.post_excerpt}/0.jpg`}
-                                                                alt={exercise.post_title}
-                                                                width={120}
-                                                                height={90}
-                                                            />
+                            {day.acf_fc_layout === "single_exercise" ? (
+                                Array.isArray(day.exercise) && day.exercise.length > 0 ? (
+                                    <div className="single-exercise">
+                                        {day.exercise.map((exercise, exerciseIndex) => {
+                                            // Log the exercise details to the console
+                                            console.log('Exercise:', day.objective);
+
+                                            return (
+                                                <Link key={exerciseIndex} className="exercise" href={`/exercise/${exercise.post_name}`}>
+                                                    <div className="exercise__thumbnail">
+                                                        <span className="exercise__play"><IconPlay/></span>
+                                                        <Image
+                                                            src={`https://img.youtube.com/vi/${exercise.post_excerpt}/0.jpg`}
+                                                            alt={exercise.post_title}
+                                                            width={120}
+                                                            height={90}
+                                                        />
+                                                    </div>
+                                                    <div className='exercise__info'>
+                                                        <h2 className="exercise__title">{exercise.post_title}</h2>
+                                                        <div className="exercise__meta">
+                                                            <span><IconRepeat />{ day.objective }</span>
+                                                            <span><IconClock/>{ day.break }</span>
                                                         </div>
-                                                        <div className='exercise__info'>
-                                                            <h2 className="exercise__title">{exercise.post_title }</h2>
-                                                            <div className="exercise__meta">
-                                                                <span><IconRepeat />{ day.exercise.objective }</span>
-                                                                <span><IconClock/>{ day.exercise.break }</span>
-                                                            </div>
-                                                        </div>
-                                                    </Link>
-                                                ))}
-                                            </div>
-                                        ) : (
-                                            <p>No single exercises available</p>
-                                        )
-                                    ) : null}
+                                                    </div>
+                                                </Link>
+                                            );
+                                        })}
+                                    </div>
+                                ) : (
+                                    <p>No single exercises available</p>
+                                )
+                            ) : null}
+
                                 </React.Fragment>
                             ))}
                         </div>
