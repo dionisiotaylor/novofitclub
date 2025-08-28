@@ -5,6 +5,6 @@
   "/member/[slug]/page": "app/member/[slug]/page.js",
   "/member/page": "app/member/page.js",
   "/page": "app/page.js",
-  "/program/[slug]/workout/[ID]/page": "app/program/[slug]/workout/[ID]/page.js",
-  "/program/[slug]/page": "app/program/[slug]/page.js"
+  "/program/[slug]/page": "app/program/[slug]/page.js",
+  "/program/[slug]/workout/[ID]/page": "app/program/[slug]/workout/[ID]/page.js"
 }

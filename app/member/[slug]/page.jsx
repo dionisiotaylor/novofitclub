@@ -36,7 +36,7 @@ export default async function MemberPage({ params }) {
             <div className="wrapper">
                 <div className="sub-header">
                     <h2>Rutinas</h2>
-                    <p>Aquí se encuentran los rutinas:</p>
+                    <p>Aquí se encuentran los rutinas.</p>
                 </div>
 
                 {member.acf && member.acf.programs && (
