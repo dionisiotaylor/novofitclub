@@ -21,8 +21,35 @@ export async function generateMetadata({ params }) {
 export default async function MemberPage({ params }) {
     const member = await fetchMember(params.slug);
 
+    console.log('Member page - params.slug:', params.slug);
+    console.log('Member page - member:', member);
+
     if (!member) {
         return <div>Member not found.</div>; // Handle not-found case
+    }
+
+    // Check if member status is expired
+    const isExpired = member.acf?.status === 'expired';
+
+    console.log('Member page - isExpired:', isExpired);
+
+    if (isExpired) {
+        return (
+            <>
+                <header className="header">
+                    <div className="wrapper">
+                        <h2 className="header__title">{member.title.rendered}</h2>
+                    </div>
+                </header>
+
+                <div className="wrapper">
+                    <div className="sub-header">
+                        <h2>Membresía Expirada</h2>
+                        <p>Tu membresía ha expirado. Por favor visita el gimnasio para renovar tu acceso y continuar con tus entrenamientos.</p>
+                    </div>
+                </div>
+            </>
+        );
     }
 
     return (
@@ -45,7 +72,7 @@ export default async function MemberPage({ params }) {
                             {member.acf.programs.map((program, programIndex) => (
                                 <li key={programIndex}>
                                     {program.single_program.map((singleProgram, singleProgramIndex) => (
-                                        <Link href={`/program/${singleProgram.post_name}`} className="single-item" key={singleProgramIndex}>
+                                        <Link href={`/program/${singleProgram.post_name}?member=${params.slug}`} className="single-item" key={singleProgramIndex}>
                                             <span className="single-item__wrap">
                                                 <span className="single-item__icon"><IconProgram/></span>
                                                 <span>
